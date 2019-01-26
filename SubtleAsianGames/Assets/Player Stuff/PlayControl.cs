@@ -15,15 +15,15 @@ public class PlayControl : MonoBehaviour
   void Update()
   {
     if(Input.GetKeyDown(KeyCode.UpArrow)) {
-      Debug.Log("Up");
+      player.Jump();
     }      
-    else if(Input.GetKeyDown(KeyCode.DownArrow)) {
+    else if(Input.GetKey(KeyCode.DownArrow)) {
       Debug.Log("Down");
     }
-    else if(Input.GetKeyDown(KeyCode.LeftArrow)) {
+    else if(Input.GetKey(KeyCode.LeftArrow)) {
       player.Move(-1, 0);
     }
-    else if(Input.GetKeyDown(KeyCode.RightArrow)) {
+    else if(Input.GetKey(KeyCode.RightArrow)) {
       player.Move(1, 0);
     }
   }
