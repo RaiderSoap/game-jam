@@ -17,8 +17,8 @@ public class PlayControl : MonoBehaviour
     if(Input.GetKeyDown(KeyCode.UpArrow)) {
       player.Jump();
     }      
-    else if(Input.GetKey(KeyCode.DownArrow)) {
-      Debug.Log("Down");
+    else if(Input.GetKeyDown(KeyCode.DownArrow)) {
+      player.ClimbStairs();
     }
     else if(Input.GetKey(KeyCode.LeftArrow)) {
       player.Move(-1, 0);
