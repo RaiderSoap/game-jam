@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class PlayControl : MonoBehaviour
 {
+  private Player player;
+
+  void Awake() {
+    player = GetComponent<Player>();   
+    if(!player) {
+      Debug.Log("No Object of type Player found!");
+    }
+  }
   void Update()
   {
     if(Input.GetKeyDown(KeyCode.UpArrow)) {
@@ -13,10 +21,10 @@ public class PlayControl : MonoBehaviour
       Debug.Log("Down");
     }
     else if(Input.GetKeyDown(KeyCode.LeftArrow)) {
-      Debug.Log("Left");
+      player.Move(-1, 0);
     }
     else if(Input.GetKeyDown(KeyCode.RightArrow)) {
-      Debug.Log("Right");
+      player.Move(1, 0);
     }
   }
 }
