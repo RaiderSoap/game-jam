@@ -5,7 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
   public float moveSpeed = 5f;
+  public float jumpPower = 10f;
   private Rigidbody2D rb;
+  private bool grounded;
 
   void Awake()
   {
@@ -18,7 +20,23 @@ public class Player : MonoBehaviour
     
   }
 
-  public void Move(int x, int y) {
-    rb.velocity = new Vector3(moveSpeed * x, 0, 0);
+  void OnCollisionEnter2D(Collision2D col) {
+    if(col.gameObject.tag == "Ground") {
+      grounded = true;
+    }
   }
+
+  public void Move(int x, int y) {
+    Vector3 vel = rb.velocity;
+    vel.x = moveSpeed * x;
+    rb.velocity = vel;
+  }
+
+  public void Jump() {
+    if(grounded) {
+      rb.AddForce(transform.up * jumpPower);
+      grounded = false;
+    }
+  }
+
 }
