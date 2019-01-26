@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayControl : MonoBehaviour
 {
-    void Update()
+  void Update()
   {
     if(Input.GetKeyDown(KeyCode.UpArrow)) {
       Debug.Log("Up");
