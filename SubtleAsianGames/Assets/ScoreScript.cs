@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class ScoreScript : MonoBehaviour
 {    
     
-    public static int scoreValue =  1;
+    public static int scoreValue =  3;
     Text score;
     
     // Start is called before the first frame update

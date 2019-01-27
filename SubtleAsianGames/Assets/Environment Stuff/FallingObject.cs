@@ -15,6 +15,7 @@ public class FallingObject : MonoBehaviour
   void OnTriggerEnter2D(Collider2D col) {
     if(col.gameObject.tag == "Ground") {
       falling = false;
+      ScoreScript.scoreValue = ScoreScript.scoreValue - 1;
     }
   }
 
