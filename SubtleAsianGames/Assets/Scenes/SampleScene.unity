@@ -192,28 +192,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1021890635}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &795370687 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9208751760633430823, guid: e3dc77e7b89463142835f18088a5e669,
-    type: 3}
-  m_PrefabInstance: {fileID: 9208751759955844915}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &795370688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795370687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97e57fd3b1b1e2e418fdd50c3e5bd00a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerA: {fileID: 444599178}
-  playerB: {fileID: 1183595234}
-  minFov: 15
-  scale: 0.35
 --- !u!1001 &1021890635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -508,35 +486,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9208751760633430820, guid: e3dc77e7b89463142835f18088a5e669,
-        type: 3}
-      propertyPath: orthographic size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9208751760633430822, guid: e3dc77e7b89463142835f18088a5e669,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9208751760633430822, guid: e3dc77e7b89463142835f18088a5e669,
-        type: 3}
-      propertyPath: m_UpscaleRT
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9208751760633430822, guid: e3dc77e7b89463142835f18088a5e669,
-        type: 3}
-      propertyPath: m_CropFrameX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9208751760633430822, guid: e3dc77e7b89463142835f18088a5e669,
-        type: 3}
-      propertyPath: m_CropFrameY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9208751760633430822, guid: e3dc77e7b89463142835f18088a5e669,
-        type: 3}
-      propertyPath: m_StretchFill
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 795370688, guid: e3dc77e7b89463142835f18088a5e669, type: 3}
+      propertyPath: playerA
+      value: 
+      objectReference: {fileID: 444599178}
+    - target: {fileID: 795370688, guid: e3dc77e7b89463142835f18088a5e669, type: 3}
+      propertyPath: playerB
+      value: 
+      objectReference: {fileID: 1183595234}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3dc77e7b89463142835f18088a5e669, type: 3}

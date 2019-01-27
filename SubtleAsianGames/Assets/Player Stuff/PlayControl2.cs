@@ -13,11 +13,13 @@ public class PlayControl2 : MonoBehaviour
     if(!player) {
       Debug.Log("No Object of type Player found!");
     }
+    player.SetTeam(Player.team.BAD);
   }
   void Update()
   {
     if(Input.GetKeyDown(KeyCode.W)) {
-      player.Jump();
+    //  player.Jump();
+      player.DropObject();
     }      
     else if(Input.GetKeyDown(KeyCode.S)) {
       player.ClimbStairs();

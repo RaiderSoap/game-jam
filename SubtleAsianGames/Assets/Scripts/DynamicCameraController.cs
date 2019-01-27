@@ -7,10 +7,10 @@
     public class DynamicCameraController : MonoBehaviour
     {
         [SerializeField]
-        private Transform playerA;
+        private Transform playerA = null;
 
         [SerializeField]
-        private Transform playerB;
+        private Transform playerB = null;
 
         [SerializeField]
         [Range(0.1f, 1.0f)]
@@ -48,6 +48,7 @@
                 sum += point.position;
             }
             sum /= this.points.Count;
+            sum.z = -10;
 
             Camera.main.transform.SetPositionAndRotation(sum, Quaternion.identity);
             Camera.main.orthographicSize = delta * this.scale;
