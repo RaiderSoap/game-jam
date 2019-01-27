@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
   private BoxCollider2D box;
   private bool grounded;
   private bool touchingStairs;
+  private bool canMove = true;
 
   private IEnumerator coroutine;
 
@@ -34,7 +35,6 @@ public class Player : MonoBehaviour
   }
 
   void OnTriggerEnter2D(Collider2D col) {
-    Debug.Log(col.gameObject.tag);
     if(col.gameObject.tag == "Stairs") {
       touchingStairs = true;
       coroutine = MoveTo(col.gameObject.GetComponent<Stairs>().targetStair.position);
@@ -42,13 +42,15 @@ public class Player : MonoBehaviour
   }
 
   void OnTriggerExit2D(Collider2D col) {
-    Debug.Log(col.gameObject.tag);
     if(col.gameObject.tag == "Stairs") {
       touchingStairs = false;
     }
   }
 
   public void Move(int x, int y) {
+    if(!canMove) {
+      return;
+    }
     Vector3 vel = rb.velocity;
     vel.x = moveSpeed * x;
     rb.velocity = vel;
@@ -62,8 +64,7 @@ public class Player : MonoBehaviour
   }
 
   public void ClimbStairs() {
-    if(touchingStairs) {
-      Debug.Log("Climbing stairs!");
+    if(canMove && touchingStairs) {
       grounded = false;
       StartCoroutine(coroutine);
     }
@@ -71,7 +72,9 @@ public class Player : MonoBehaviour
 
   IEnumerator MoveTo(Vector3 target) {
     rb.gravityScale = 0;
+    rb.velocity = Vector2.zero;
     box.enabled = false;
+    canMove = false;
     while((transform.position - target).magnitude > closeEnoughDistance) {
       float dt = Time.deltaTime;
       transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * dt);
@@ -79,6 +82,7 @@ public class Player : MonoBehaviour
     }
     rb.gravityScale = 1;
     box.enabled = true;
+    canMove = true;
   }
 
 }

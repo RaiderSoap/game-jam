@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayControl : MonoBehaviour
+// This is player 2 control - good player
+// Uses WASD Keys.
+public class PlayControl2 : MonoBehaviour
 {
   private Player player;
 
@@ -14,16 +16,16 @@ public class PlayControl : MonoBehaviour
   }
   void Update()
   {
-    if(Input.GetKeyDown(KeyCode.UpArrow)) {
+    if(Input.GetKeyDown(KeyCode.W)) {
       player.Jump();
     }      
-    else if(Input.GetKeyDown(KeyCode.DownArrow)) {
+    else if(Input.GetKeyDown(KeyCode.S)) {
       player.ClimbStairs();
     }
-    else if(Input.GetKey(KeyCode.LeftArrow)) {
+    else if(Input.GetKey(KeyCode.A)) {
       player.Move(-1, 0);
     }
-    else if(Input.GetKey(KeyCode.RightArrow)) {
+    else if(Input.GetKey(KeyCode.D)) {
       player.Move(1, 0);
     }
   }
